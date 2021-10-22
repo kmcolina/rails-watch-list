@@ -23,3 +23,28 @@
 text-decoration: none;
   }
 }
+
+
+.card-text {
+  color: white !important;
+  text-decoration: none !important;
+}
+
+.movie-card{
+
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.movie-img {
+  object-fit: cover;
+  object-position: center;
+  height:220px;
+  width:100%;
+
+}
+
+.fa-star-yellow{
+  color: #FEDE00;
+}

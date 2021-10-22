@@ -9,7 +9,18 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
 import 'bootstrap';
+import 'jquery-bar-rating/dist/themes/css-stars';
+
+import { initStarsRating } from './plugins/init_stars_rating';
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+document.addEventListener('turbolinks:load', () => {
+  initStarsRating();
+});
+
+// $(document).ready(function(){
+//   initStarsRating();
+// })
