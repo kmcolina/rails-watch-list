@@ -1,7 +1,6 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url( <%= asset_path 'sala_cine.jpg' %> );">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url( <%= cloudinary_url(@list.photo.key, :width => 100, :height => 150)  %> );">
   <div class="text-center">
-    <h1>Save any kind of Movies</h1>
-    <p>Clasic</p>
+    <h1><%= @list.name %></h1>
   </div>
 </div>
 
@@ -75,27 +74,19 @@
 </div>
 
     </div>
-
+    <hr>
+<div class = "container d-flex justify-content-center">
       <div class="col-12 col-sm-6">
-        <hr>
+
         <div class="bg-white rounded p-3">
          <h3>Add a new movie</h3>
         <%= simple_form_for [ @list, @bookmark ] do |f| %>
           <%= f.input :comment, placeholder: 'Add your comment' %>
           <%= f.association :movie, input_html: { class: 'select2' } %>
-          <%= f.submit "Add movie", class: "btn btn-primary" %>
+          <%= f.submit "Add movie", class:'btn btn-flat' %>
         <% end %>
         </div>
     </div>
-
- <select id="example">
-   <option value="1">1</option>
-   <option value="2">2</option>
-   <option value="3">3</option>
-   <option value="4">4</option>
-   <option value="5">5</option>
- </select>
-
-
-
-<%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
+    </div>
+<br>
+</div>

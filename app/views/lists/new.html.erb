@@ -1,22 +1,34 @@
-
-<div class="container">
- <div class="card borde col-12 col-sm-6">
-          <h3>Add a new List</h3>
-        <div >
-          <div class="bg-white rounded p-3">
-<%= simple_form_for(@list) do |f| %>
-  <% if @list.errors.any? %>
-    <div class="errors-container">
-      <ul>
-        <% @list.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <%= f.input :name %>
-<%= f.input :photo, as: :file %>
-  <%= f.submit  class:'btn btn-flat'%>
-<% end %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url( <%= asset_path 'cotufas.jpg' %> );">
+  <div class="text-center">
+    <h1>Add new list of Movies</h1>
+  </div>
 </div>
+
+
+<div class = "container d-flex justify-content-center">
+
+<div class="card borde col-12 col-sm-6  d-flex justify-sm-content-center">
+
+
+  <div class="bg-white rounded p-3">
+      <%= simple_form_for(@list) do |f| %>
+        <% if @list.errors.any? %>
+          <div class="errors-container">
+            <ul>
+              <% @list.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <%= f.input :name %>
+        <%= f.input :photo, as: :file %>
+        <%= f.submit  class:'btn btn-flat'%>
+      <% end %>
+  </div>
+</div>
+</div>
+<br>
+
+
 </div>
