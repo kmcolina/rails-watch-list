@@ -1,7 +1,9 @@
-<h1>Lists#new</h1>
-<p>Find me in app/views/lists/new.html.erb</p>
 
 <div class="container">
+ <div class="card borde col-12 col-sm-6">
+          <h3>Add a new List</h3>
+        <div >
+          <div class="bg-white rounded p-3">
 <%= simple_form_for(@list) do |f| %>
   <% if @list.errors.any? %>
     <div class="errors-container">
@@ -14,6 +16,7 @@
   <% end %>
   <%= f.input :name %>
 
-  <%= f.submit %>
+  <%= f.submit  class:'btn btn-flat'%>
 <% end %>
+</div>
 </div>

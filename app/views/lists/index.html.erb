@@ -24,20 +24,3 @@
 
 
 </div>
-
-<div class="container">
-<%= simple_form_for(@list) do |f| %>
-  <% if @list.errors.any? %>
-    <div class="errors-container">
-      <ul>
-        <% @list.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <%= f.input :name %>
-
-  <%= f.submit %>
-<% end %>
-</div>
