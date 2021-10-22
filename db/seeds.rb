@@ -32,10 +32,21 @@ movies_results.each do |item|
   new_movie.save!
 end
 
-List.create(name: 'Drama')
-List.create(name: 'All time favourites')
-g = List.create(name: 'Girl Power')
-Review.create! comment: "comentario",  rating: 2, list_id: g.id
+
+file = URI.open('https://images.unsplash.com/photo-1538151790645-80dd86cda1ce?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=774&q=80')
+article = List.new(name: 'Favorites')
+article.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+article.save
+
+file1 = URI.open('https://images.unsplash.com/photo-1512113569142-8a60fccc7caa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80')
+article1 = List.new(name: 'Drama')
+article1.photo.attach(io: file1, filename: 'nes1.png', content_type: 'image/png')
+article1.save
+
+# List.create(name: 'Drama')
+# List.create(name: 'All time favourites')
+# g = List.create(name: 'Girl Power')
+# Review.create! comment: "comentario",  rating: 2, list_id: g.id
 
 Bookmark.create(comment: 'Recomended by John', movie_id: 3, list_id: 2)
 Bookmark.create(comment: 'Super heroe movie', movie_id: 1, list_id: 3)

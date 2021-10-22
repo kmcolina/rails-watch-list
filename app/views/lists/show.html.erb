@@ -53,9 +53,8 @@
           <% review.rating.times do %>
             <i class="fas fa-star fa-star-yellow"></i>
             <% end %>
-<small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small>
+          <small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small>
         </div>
-
         <p class = "comment"> <%= review.comment %> </p>
         <hr>
         <% end %>
@@ -96,3 +95,7 @@
    <option value="4">4</option>
    <option value="5">5</option>
  </select>
+
+
+
+<%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
